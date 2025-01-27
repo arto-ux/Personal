@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arto | Lead Product Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <meta name="description" content="Hello there, I'm Arto, lead product designer specialized in crafting AI experiences">
+    <link rel="stylesheet" href="./css/styles.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+</head>
+<body>
+    <div class="loader">
+        <div class="loading-text">
+            <span>L</span>
+            <span>O</span>
+            <span>A</span>
+            <span>D</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+        </div>
+        <div class="progress-wrap">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <div class="burger-menu">
+        <div></div>
+        <div></div>
+    </div>
+    
+    <div class="sidebar" id="sidebar">
+        <svg width="51" height="22" viewBox="0 0 51 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M44.0008 7.8999C40.0008 7.8999 37.8008 10.4999 37.8008 13.9999C37.8008 17.4999 40.0008 20.0999 44.0008 20.0999C48.0008 20.0999 50.2008 17.5199 50.2008 13.9999C50.2008 10.4799 48.0008 7.8999 44.0008 7.8999ZM44.0008 17.2999C42.0108 17.2999 40.8008 16.0099 40.8008 13.9999C40.8008 11.9899 42.0108 10.6999 44.0008 10.6999C45.9908 10.6999 47.2008 11.9999 47.2008 13.9999C47.2008 15.9999 45.9908 17.2999 44.0008 17.2999Z" fill="#09090B"/>
+            <path d="M22 12.6V20H25V12.4C25 11.3 25.5 10.8 26.6 10.8H29V8H26.4C23.4 8 22 9.39 22 12.6Z" fill="#09090B"/>
+            <path d="M37.8 8H34V2H31V20H34V10.8H36.2L37.8 8Z" fill="#09090B"/>
+            <path d="M12.6404 2H7.76039L0.400391 20H3.64039L8.86039 7.23C9.19039 6.41 9.50039 5.58 9.78039 4.74L10.1904 3.5L10.6004 4.74C10.8804 5.58 11.1904 6.41 11.5204 7.23L16.7404 20H19.9804L12.6404 2Z" fill="#09090B"/>
+        </svg>
+                    
+        <ul class="menu">
+            <li><a href="#intro" class="active">Intro</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#my-background">Background</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+        </ul>
+        <button class="toggle-overlay" onclick="toggleOverlay()" aria-label="Night mode toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+    
+    <main>
+        <section id="intro">
+            <div class="container">   
+                <h1>Hello there, I'm Arto, lead product designer specialized in crafting AI experiences</h1>
+                <p class="reveal-type" data-bg-color="var(--grey-300)" data-fg-color="var(--grey-950)">
+                    With 10+ years in dynamic and ever-changing environments, I've learned how to achieve business 
+                    goals while balancing usability and feasibility, and maintaining a high bar for aesthetics. 
+                    Throughout my career, I've developed strong empathy and communication skills, enabling me to collaborate 
+                    within cross-functional teams and bring great ideas to life.
+                </p>
+            </div>
+        </section>
+
+        <section id="work">
+            <div class="container-wide fade-image">
+                <picture>
+                    <source srcset="./images/collage-1x.webp 1x, ./images/collage-2x.webp 2x" type="image/webp">
+                    <img src="./images/collage-1x.jpg" srcset="./images/collage-1x.jpg 1x, ./images/collage-2x.jpg 2x" alt="collage of works">
+                </picture>
+            </div>
+            <div class="fade-image">
+                <h2 class="section-title">Ongoing Projects</h2>
+            </div>
+            <div class="container-wide">
+                <div class="image-wrapper left">
+                    <div class="reveal">
+                        <picture>
+                            <source srcset="./images/iris-1x.webp 1x, ./images/iris-2x.webp 2x" type="image/webp">
+                            <img src="./images/collage-1x.jpg" srcset="./images/iris-1x.jpg 1x, ./images/iris-2x.jpg 2x" alt="Iris—First AI-Powered Dating App">
+                        </picture>
+                        <div class="caption">
+                            <p class="subtitle">Iris—First AI-Powered Dating App</p>
+                            <p class="description">Iris uses AI to learn users' preferences by analyzing their likes and dislikes, particularly focusing on facial features.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-wrapper right">
+                    <div class="reveal">
+                        <picture>
+                            <source srcset="./images/bestlook-1x.webp 1x, ./images/bestlook-2x.webp 2x" type="image/webp">
+                            <img src="./images/bestlook-1x.jpg" srcset="./images/bestlook-1x.jpg 1x, ./images/bestlook-2x.jpg 2x" alt="Bestlook—Plastic Surgery Simulator">
+                        </picture>
+                        <div class="caption">
+                            <p class="subtitle">Bestlook—Plastic Surgery Simulator</p>
+                            <p class="description">AI predicts and simulates the most optimal cosmetic changes based on 3+ million trained models.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="my-background">
+            <div class="container">   
+                <h2 class="fade-image">My Background</h2>
+                <p class="reveal-type" data-bg-color="var(--grey-300)" data-fg-color="var(--grey-950)">
+                    I’ve been lucky to explore the many layers of design—strategic, technical, and deeply human. 
+                    Late-night brainstorming with founders. Learning system thinking and efficiency from my brilliant engineers. 
+                    Diving into the craft with fellow designers. Losing sleep over analytics and customer discovery insights. 
+                    It’s been challenging, but incredibly exciting to see ideas grow into something meaningful.
+                    Along the way, I’ve had the privilege of collaborating with amazing people around the world.
+                </p>
+                <div class="company fade-image">
+                    <p class="company-details">2019–Present • New York, Yerevan</p>
+                    <h3>Lead Product Designer @ Iris Datind</h3>
+                    <p class="job-description">
+                        Joined as the first design hire, partnering with the one and only Igor Khalatian, 
+                        founder of Iris, to shape product strategy and design the first AI-powered dating app. 
+                        Addressed early AI skepticism by creating transparent, user-friendly experiences that 
+                        helped users trust the technology. Levaraged analytics to drive data-informed desisions.
+                    </p>
+                </div>
+                <img src="./images/iris-team1-1x.jpg" srcset="./images/iris-team1-1x.jpg 1x, ./images/iris-team1-2x.jpg 2x" alt="team-photo" class="rotate-image"/>
+                <img src="./images/iris-team2-1x.jpg" srcset="./images/iris-team2-1x.jpg 1x, ./images/iris-team2-2x.jpg 2x" alt="team-photo" class="rotate-image"/>
+            </div>
+            <div class="container">   
+                <div class="company fade-image">
+                    <p class="company-details">2012–2014 • Yerevan</p>
+                    <h3>Product Designer @ Dasaran</h3>
+                    <p class="job-description">
+                        Designed an award-winning educational platform aimed
+                        at improving access to quality education for students and
+                        teachers. Created user-friendly tools for managing
+                        school operations and tracking student performance.
+                    </p>
+                </div>
+                <img src="./images/das-team1-1x.jpg" srcset="./images/das-team1-1x.jpg 1x, ./images/das-team1-2x.jpg 2x" alt="team-photo" class="rotate-image"/>
+                <img src="./images/das-team2-1x.jpg" srcset="./images/das-team2-1x.jpg 1x, ./images/das-team2-2x.jpg 2x" alt="team-photo" class="rotate-image"/>
+            </div>
+            <div class="container">   
+                <div class="company fade-image">
+                    <p class="company-details">Since 2011 • San Francisco, Los Angeles, Limassol</p>
+                    <h3>Freelance Designer</h3>
+                    <p class="job-description">
+                        I wore many hats across web and mobile app design disciplines, helping individuals, agencies, and companies big and small, 
+                        including Y-Combinator backed startup, Save the Children, UNICEF, The U.S. Embassy in Armenia, UN, and The World Bank.
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="fade-image">
+                    <p class="subtitle">Highlights</p>
+                    <ul>
+                        <li>Business-Informed Design: Aligning design decisions with growth, revenue, and strategic business objectives.</li>
+                        <li>Discovery and Validation: Proficient in user interviews, shadowing, and usability tests.</li>
+                        <li>Data-Driven Decisions: Using analytics to improve user onboarding, activation, retention, and conversion.</li>
+                    </ul>
+                </div>
+                <div class="fade-image">
+                    <p class="subtitle">Skills</p>
+                    <ul>
+                        <li>User Experience Design and Research</li>
+                        <li>Figma, XD, Adobe Creative Suite</li>
+                        <li>Wireframing and Prototyping</li>
+                        <li>Information Architecture</li>
+                        <li>Customer Development</li>
+                        <li>Product Analytics</li>
+                        <li>HTML, CSS</li>
+                    </ul>
+                </div>
+                <div class="fade-image">
+                    <p class="subtitle">Certifications</p>
+                    <ul>
+                        <li>Career Essentials in Business Analysis</li>
+                        <li>Storytelling to Influence Leadership</li>
+                        <li>Data-Driven Research and Design</li>
+                        <li>Agile UX Design and Research</li>
+                        <li>Effective Communication</li>
+                        <li>Responsive Web Design</li>
+                        <li>Design Psychology</li>
+                        <li>Product Analytics</li>
+                    </ul>
+                </div>
+                <div class="fade-image">
+                    <p class="subtitle">Recognitions</p>
+                    <ul>
+                        <li>Grand Prix Prize: Best Urban Planning<br>(International Student Workshop, France)</li>
+                        <li>Featured on Behance. Recognized in:<br>UI/UX, XD, Photoshop, and Game Design categories.</li>
+                    </ul>
+                </div>
+                <div class="fade-image">
+                <p class="subtitle">Education</p>
+                    <ul>
+                        <li>Master of Arts in Architectural Design</li>
+                    </ul>
+                </div>
+            </div>
+  
+        </section>
+
+        <section id="contacts">
+            <div class="container">
+                <h1>Get in touch!</h1>  
+                <h3>Have an idea?<span class="highlight-word" data-video="vidOne">Jump in</span>and<span class="highlight-word" data-video="vidTwo">explore</span>new heights with me!</h3>
+                <video id="vidOne" loop muted preload="none">
+                    <source src="./images/video-1.mp4" type="video/mp4" />
+                </video>
+                  
+                <video id="vidTwo" loop muted preload="none">
+                    <source src="./images/video-2.mp4" type="video/mp4" />
+                </video>
+                <div class="contact-links">
+                    <a class="link-visit" href="https://www.linkedin.com/in/artobaghdasaryan" target="_blank" rel="noopener noreferrer">LinkedIn
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffffff">
+                            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
+                        </svg>                                   
+                    </a>
+                    <a class="link-visit" href="https://www.behance.net/artavazd" target="_blank" rel="noopener noreferrer">Behance
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffffff">
+                            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
+                        </svg>                                   
+                    </a>
+                </div>
+                <p class="footnote">Designed and developed by Arto Baghdasaryan and Claude.ai</p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Sidebar Toggle Script -->
+    <script>
+        const burgerMenu = document.querySelector('.burger-menu');
+        const sidebar = document.querySelector('.sidebar');
+        const menuLink = document.querySelectorAll('.sidebar .menu a');
+      
+        burgerMenu.addEventListener('click', () => {
+          sidebar.classList.toggle('active');
+          burgerMenu.classList.toggle('active');
+        });
+      
+        menuLink.forEach((link) => {
+          link.addEventListener('click', () => {
+
+            sidebar.classList.remove('active');
+            burgerMenu.classList.remove('active');
+            // }
+          });
+        });
+      
+        document.addEventListener('click', (e) => {
+          if (window.innerWidth <= 768) {
+
+            if (!sidebar.contains(e.target) && !burgerMenu.contains(e.target)) {
+              sidebar.classList.remove('active');
+              burgerMenu.classList.remove('active');
+            }
+          }
+        });
+    </script>
+      
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+      
+        const splitTypes = document.querySelectorAll('.reveal-type');
+      
+        splitTypes.forEach((element) => {
+          const bgColor = element.dataset.bgColor;
+          const fgColor = element.dataset.fgColor;
+      
+          const text = new SplitType(element, { types: 'words' });
+
+          gsap.fromTo(
+            text.words,
+            { color: bgColor },
+            {
+              color: fgColor,
+              duration: 0.4,
+              stagger: 0.02,
+              scrollTrigger: {
+                trigger: element,
+                start: 'top 80%',
+                end: 'top 20%',
+                scrub: true,
+                toggleActions: 'play reverse play reverse',
+              },
+            }
+          );
+        });
+      
+        // Fade in for all elements with class 'fade-image'
+        const fadeImages = document.querySelectorAll('.fade-image');
+      
+        fadeImages.forEach((fadeImage) => {
+          gsap.fromTo(
+            fadeImage,
+            { autoAlpha: 0, scale: 0.9 },
+            {
+              autoAlpha: 1,
+              scale: 1, 
+              scrollTrigger: {
+                trigger: fadeImage,
+                start: 'top 80%',
+                end: 'top 20%', 
+                scrub: true,
+                toggleActions: 'play reverse play reverse',
+              },
+            }
+          );
+        });
+
+        /// Rotate for all elements with class 'rotate-image'
+        const rotateImages = document.querySelectorAll('.rotate-image');
+
+        rotateImages.forEach((rotateImage) => {
+
+        const initialRotation = Math.random() * 25 - 10;
+        const finalRotation   = Math.random() * 35 - 15;
+
+        gsap.fromTo(
+            rotateImage,
+            {
+            autoAlpha: 1,
+            scale: 0.85,
+            rotation: initialRotation
+            },
+            {
+            autoAlpha: 1,
+            scale: 1,
+            rotation: finalRotation,
+            scrollTrigger: {
+                trigger: rotateImage,
+                start: 'top 90%',
+                end: 'top 10%',
+                scrub: true,
+                toggleActions: 'play reverse play reverse'
+            },
+            ease: 'power2.out'
+            }
+        );
+        });
+
+
+        // Lenis for smooth scrolling
+        const lenis = new Lenis({
+        duration: 3, // default ~1 (bigger = slower, smoother)
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+        wheelMultiplier: 1, // how fast mouse wheel scrolls
+        touchMultiplier: 1, // how fast touch scrolls
+        });
+
+        lenis.on("scroll", (e) => {
+        console.log(e);
+        });
+
+        function animateLenis(time) {
+        lenis.raf(time);
+        requestAnimationFrame(animateLenis);
+        }
+
+        requestAnimationFrame(animateLenis);
+    </script>
+
+
+      
+    <script>
+        // Smooth scrolling when clicking a menu link
+        const menuLinks = document.querySelectorAll('.sidebar .menu a');
+
+        menuLinks.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+
+                menuLinks.forEach((link) => link.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+
+        const sections = document.querySelectorAll('section');
+
+        function highlightMenu() {
+            let currentSectionId = '';
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            menuLinks.forEach((link) => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightMenu);
+
+    </script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+      
+        let revealContainers = document.querySelectorAll(".reveal");
+      
+        revealContainers.forEach((container) => {
+          let image = container.querySelector("img");
+          let caption = container.querySelector(".caption");
+      
+          let tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: container,
+              start: "top 50%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse"
+            }
+          });
+
+          tl.set(container, { autoAlpha: 1 });
+      
+          tl.from(container, {
+            duration: 1.6,
+            xPercent: -120,
+            ease: "power2.out"
+          });
+          tl.from(image, {
+            duration: 1.6,
+            xPercent: 120,
+            scale: 1.2,
+            delay: -1.6,      // Overlaps with the container tween
+            ease: "power2.out"
+          });
+          tl.from(caption, {
+            duration: 0.6,
+            x: -50,
+            autoAlpha: 0,
+            delay: -0.2,      // Slight overlap with the image tween
+            ease: "power2.out"
+          });
+        });
+    </script>
+
+    <script>
+        // Select all highlight words
+        const highlightWords = document.querySelectorAll('.highlight-word');
+    
+        highlightWords.forEach(word => {
+        const videoId = word.dataset.video; 
+        const videoEl = document.getElementById(videoId);
+    
+        function handleMouseMove(e) {
+            const offsetX = -100; 
+            const offsetY = -380;
+            videoEl.style.left = (e.pageX + offsetX) + 'px';
+            videoEl.style.top  = (e.pageY + offsetY) + 'px';
+        }
+    
+
+        word.addEventListener('mouseenter', () => {
+            document.addEventListener('mousemove', handleMouseMove);
+            gsap.to(videoEl, {
+            duration: 0.4,
+            opacity: 1,
+            onStart: () => {
+                videoEl.play();
+            }
+            });
+        });
+
+        word.addEventListener('mouseleave', () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+            gsap.to(videoEl, {
+            duration: 0.4,
+            opacity: 0,
+            onComplete: () => {
+                videoEl.pause();
+                videoEl.currentTime = 0; // optional reset
+            }
+            });
+        });
+        });
+    </script>
+    
+      
+    <script>
+        document.body.style.overflow = "hidden";
+
+        gsap.fromTo(
+          ".progress-bar",
+          { width: "0%" },
+          {
+            width: "100%",
+            duration: 3,
+            ease: "power2.inOut",
+            onComplete: () => {
+
+              gsap.to(".loader", {
+                autoAlpha: 0,
+                duration: 0.4,
+                onComplete: () => {
+
+                  document.body.style.overflow = "auto";
+                }
+              });
+            }
+          }
+        );
+    </script>
+      
+    <script>
+        function toggleOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.classList.toggle('active');
+        }
+    </script>            
+</body>
+</html>
