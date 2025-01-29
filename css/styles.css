@@ -10,7 +10,7 @@
     --grey-200: #E4E4E7;
     --grey-100: #F4F4F5;
     --grey-50: #FAFAFA;
-    --orange: #ff2c00;
+    --emerald: #0D9488;
 }
 
 * {
@@ -38,23 +38,30 @@ img, picture {
 main {
     width: 100%;
     padding-left: 200px;
+    overflow: hidden;
 }
 
 h1, h2 {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(1.75rem, 4.5vw, 4.5rem);
+    font-size: clamp(2rem, 4.5vw, 4.25rem);
     font-weight: 500;
     letter-spacing: -0.025em;
-    margin-bottom: 1em;
     line-height: 1.333em;
+    margin-bottom: 1em;
 }
 h3 {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(1.125rem, 2vw, 2rem);
+    font-size: clamp(1.5rem, 2.25vw, 2rem);
     font-weight: 600;
     letter-spacing: -0.025em;
     margin-bottom: 0.75em;
     line-height: 1.333em;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
 }
 
 .section-title {
@@ -62,8 +69,7 @@ h3 {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 0 40px;
-    min-height: 50vh;
+    padding: 2em 40px;
     margin: 0;
 }
 
@@ -75,7 +81,7 @@ h3 {
 }
 .container-wide {
     width: 100%;
-    padding: 40px;
+    padding: 0 40px;
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -134,7 +140,7 @@ h3 {
 
 .burger-menu div {
     width: 20px;
-    height: 3px;
+    height: 2px;
     background-color: var(--grey-950);
     margin: 3px 0;
     transition: all 0.3s ease;
@@ -202,19 +208,10 @@ h3 {
     opacity: 0.4;
     pointer-events: none;
 }
-@media (max-width: 768px) {
-    .burger {
-        display: block;
-    }
-}
-#intro {
-    padding-top: 25vh;
-    margin-bottom: 8em;
-}
+
 #contacts {
-    padding-top: 8em;
-    padding-bottom: 5em;
-    min-height: 100vh
+    padding-top: 4em;
+    padding-bottom: 32px;
 }
 
 p {
@@ -232,7 +229,7 @@ p {
     font-size: clamp(1rem, 2vw, 2rem);
     font-weight: 500;
     letter-spacing: -0.025em;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
     line-height: 1.333em;
 }
 .image-wrapper {
@@ -241,26 +238,26 @@ p {
     justify-content: center;
     width: 100%;
     position: relative;
+}
+
+.left {
+    align-items: flex-start;
     margin-bottom: 8em;
 }
 
-.image-wrapper.left {
-    align-items: flex-start;
-}
-
-.image-wrapper.right {
+.right {
     align-items: flex-end;
 }
 
-.reveal {
+.project {
     visibility: hidden;
-    position: relative;
     width: min(100%, 720px);
     overflow: hidden;
 }
-.reveal img {
+.project img {
     height: 100%;
     width: 100%;
+    border-radius: 1em;
     object-fit: cover;
     transform-origin: center;
 }
@@ -283,14 +280,13 @@ p {
     font-size: 0.875rem;
     line-height: 1.5;
     color: var(--grey-800);
-    margin-bottom: 1em;
+    margin-bottom: 0;
 }
 .footnote {
     font-size: 0.875rem;
     line-height: 1.5;
-    color: var(--grey-500);
-    margin-bottom: 1em;
-    margin-top: 5em;
+    color: var(--grey-400);
+    margin-top: 12em;
 }
 
 .loader {
@@ -364,9 +360,8 @@ p {
 .contact-links {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
     margin-top: 4em;
 }
 
@@ -410,10 +405,10 @@ p {
     opacity: 1;
 }
 .company{
-    margin: 12em auto 4em auto;
+    margin: 6em auto 4em auto;
 }
 .company-details {
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 1vw, 1rem);
     font-weight: 400;
     line-height: 1.333;
     letter-spacing: -0.01em;
@@ -428,12 +423,12 @@ p {
 }
 .rotate-image {
     background: white;
-    box-shadow: 12px 20px 56px rgba(9, 9, 11, 0.2);
+    box-shadow: 12px 20px 56px rgba(9, 9, 11, 0.1);
     width: min(100%, 480px);
     transition: all 0.3s ease;
 }
 .highlight-word {
-    color: #0D9488;
+    color: var(--emerald);
     padding: 0 .2em;
     text-decoration: underline;
     cursor: pointer;
@@ -450,13 +445,38 @@ video {
     pointer-events: none; /* no mouse events on the video itself */
 }
 ul {
-    line-height: 1.333em;
+    line-height: 1.25em;
     max-width: 440px;
-    padding: 0 0 1.5em 0.8em;
+    padding: 0 0 2em 0.8em;
 
 }
 li {
     color: var(--grey-600);
     font-size: 0.875rem;
     padding: 0.333em;
+}
+
+.zoomed-in {
+    transform: scale(1);
+    opacity: 1;
+    will-change: transform, opacity;
+}
+
+.animated-list p {
+    transform: translateX(40px);
+    opacity: 0;
+}
+
+.animated-list li {
+    transform: translateX(40px);
+    opacity: 0;
+}
+.all-caps {
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--grey-950);
+    margin-bottom: 0.333em;
 }
