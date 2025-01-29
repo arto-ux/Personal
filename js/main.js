@@ -165,8 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function animateCursor() {
-        posX += (mouseX - posX) * 0.2;
-        posY += (mouseY - posY) * 0.2;
+        posX += (mouseX - posX) * 0.3;
+        posY += (mouseY - posY) * 0.3;
         cursor.style.transform = `translate(${posX - 12}px, ${posY - 12}px)`;
         requestAnimationFrame(animateCursor);
     }
