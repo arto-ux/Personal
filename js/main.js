@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cursor.style.width = '24px';
     cursor.style.height = '24px';
     cursor.style.borderRadius = '50%';
-    cursor.style.background = 'rgba(16, 185, 129, 0.3)';
+    cursor.style.background = 'rgba(16, 185, 129, 0.2)';
     cursor.style.pointerEvents = 'none';
     cursor.style.zIndex = '999999';
     cursor.style.top = '0';
@@ -148,14 +148,25 @@ document.addEventListener("DOMContentLoaded", () => {
     let posX = 0, posY = 0;
     let mouseX = 0, mouseY = 0;
 
+    function updateCursorVisibility() {
+        if (window.innerWidth < 1280) {
+            cursor.style.display = 'none';
+        } else {
+            cursor.style.display = 'block';
+        }
+    }
+
+    window.addEventListener('resize', updateCursorVisibility);
+    updateCursorVisibility();
+
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
 
     function animateCursor() {
-        posX += (mouseX - posX) * 0.2;
-        posY += (mouseY - posY) * 0.2;
+        posX += (mouseX - posX) * 0.1;
+        posY += (mouseY - posY) * 0.1;
         cursor.style.transform = `translate(${posX - 12}px, ${posY - 12}px)`;
         requestAnimationFrame(animateCursor);
     }
