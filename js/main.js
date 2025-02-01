@@ -176,8 +176,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const lenis = new Lenis({
         duration: 1,
         easing: (t) => 1 - Math.pow(1 - t, 3),
-        wheelMultiplier: 0.8,
-        touchMultiplier: 0.8,
+        wheelMultiplier: 0.9,
+        touchMultiplier: 0.9,
     });
 
     function animateLenis(time) {
