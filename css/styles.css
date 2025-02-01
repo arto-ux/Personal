@@ -175,6 +175,9 @@ h3 {
     .burger-menu.active div:nth-child(2) {
         transform: rotate(-45deg) translate(2px, -4px);
     }
+    .job-description {
+        font-size: 0.875rem;
+    }
 }
 
 .toggle-overlay {
@@ -222,7 +225,7 @@ p {
     color: var(--grey-800);
     letter-spacing: -0.025em;
     margin-bottom: 1em;
-    line-height: 1.5em;
+    line-height: 1.414em;
 }
 
 .reveal-type {
@@ -231,7 +234,7 @@ p {
     font-weight: 500;
     letter-spacing: -0.025em;
     margin-bottom: 4em;
-    line-height: 1.333em;
+    line-height: 1.414em;
 }
 .image-wrapper {
     display: flex;
@@ -279,13 +282,13 @@ p {
 
 .description {
     font-size: 0.875rem;
-    line-height: 1.5;
+    line-height: 1.414;
     color: var(--grey-800);
     margin-bottom: 0;
 }
 .footnote {
     font-size: 0.875rem;
-    line-height: 1.5;
+    line-height: 1.414;
     color: var(--grey-400);
     margin-top: 12em;
 }
@@ -304,7 +307,7 @@ p {
     align-items: center;
     inset: 0;
     margin: auto;
-    height: 1.5em;
+    height: 1.414em;
     overflow: hidden;
     z-index: 10000;
 }
@@ -418,7 +421,7 @@ p {
 }
 .job-description {
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.414;
     color: var(--grey-800);
     margin-bottom: 0;
 }
