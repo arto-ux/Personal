@@ -174,10 +174,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Lenis Smooth Scrolling
     const lenis = new Lenis({
-        duration: 1.2,
+        duration: 1,
         easing: (t) => 1 - Math.pow(1 - t, 3),
-        wheelMultiplier: 0.5,
-        touchMultiplier: 0.5,
+        wheelMultiplier: 0.7,
+        touchMultiplier: 0.7,
     });
 
     function animateLenis(time) {
