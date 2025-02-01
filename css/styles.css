@@ -481,3 +481,11 @@ li {
     color: var(--grey-950);
     margin-bottom: 0.333em;
 }
+.shadow {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+}
