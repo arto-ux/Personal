@@ -89,7 +89,7 @@ h3 {
 .sidebar {
     width: 200px;
     height: 100vh;
-    background-color: white;
+    background-color: transparent;
     position: fixed;
     top: 0;
     left: 0;
@@ -154,6 +154,7 @@ h3 {
     .sidebar.active {
         transform: translateX(0);
         width: 100%;
+        background-color: white;
     }
 
     main {
