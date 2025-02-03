@@ -13,6 +13,22 @@
     --emerald: #0D9488;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+  }
+
+::-webkit-scrollbar-track {
+background: transparent;
+border-style: none;
+border-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-color: transparent;
+    cursor: none;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -37,7 +53,7 @@ img, picture {
 
 main {
     width: 100%;
-    padding-left: 200px;
+    padding-left: 120px;
     overflow: hidden;
 }
 
@@ -47,7 +63,6 @@ h1, h2 {
     font-weight: 500;
     letter-spacing: -0.025em;
     line-height: 1.333em;
-    margin-bottom: 1em;
 }
 h3 {
     font-family: 'Inter', sans-serif;
@@ -69,7 +84,7 @@ h3 {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 2em 40px;
+    padding: 2.5em 40px;
     margin: 0;
 }
 
@@ -87,7 +102,7 @@ h3 {
 }
 
 .sidebar {
-    width: 200px;
+    width: 160px;
     height: 100vh;
     background-color: transparent;
     position: fixed;
@@ -97,7 +112,7 @@ h3 {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 36px 40px;
+    padding: 32px 28px;
     z-index: 999;
     transition: transform 0.3s ease;
 }
@@ -131,8 +146,8 @@ h3 {
     display: none;
     cursor: pointer;
     position: fixed;
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -177,6 +192,10 @@ h3 {
     }
     .job-description {
         font-size: 0.875rem;
+    }
+
+    .second-image {
+        margin-left: 0;
     }
 }
 
@@ -366,6 +385,7 @@ p {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
+    gap: 4px;
     margin-top: 4em;
 }
 
@@ -431,6 +451,10 @@ p {
     width: min(100%, 480px);
     transition: all 0.3s ease;
 }
+.second-image {
+    margin-left: 160px;
+}
+
 .highlight-word {
     color: var(--emerald);
     padding: 0 .2em;
