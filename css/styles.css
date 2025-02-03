@@ -87,16 +87,19 @@ h3 {
     padding: 2.5em 40px;
     margin: 0;
 }
+.section-title .char {
+    display: inline-block;
+}
 
 .container {
     width: 100%;
-    padding: 0 40px;
+    padding: 0 48px;
     max-width: 720px;
     margin: 0 auto;
 }
 .container-wide {
     width: 100%;
-    padding: 0 40px;
+    padding: 0 48px;
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -160,43 +163,8 @@ h3 {
     margin: 3px 0;
     transition: all 0.3s ease;
 }
-
-@media screen and (max-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%);
-    }
-
-    .sidebar.active {
-        transform: translateX(0);
-        width: 100%;
-        background-color: white;
-    }
-
-    main {
-        padding-left: 0;
-    }
-
-    .burger-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .burger-menu.active div:nth-child(1) {
-        transform: rotate(45deg) translate(2px, 4px);
-    }
-
-    .burger-menu.active div:nth-child(2) {
-        transform: rotate(-45deg) translate(2px, -4px);
-    }
-    .job-description {
-        font-size: 0.875rem;
-    }
-
-    .second-image {
-        margin-left: 0;
-    }
+.second-image {
+    margin-left: 160px;
 }
 
 .toggle-overlay {
@@ -451,9 +419,6 @@ p {
     width: min(100%, 480px);
     transition: all 0.3s ease;
 }
-.second-image {
-    margin-left: 160px;
-}
 
 .highlight-word {
     color: var(--emerald);
@@ -515,4 +480,42 @@ li {
     object-fit: cover;
     z-index: -1;
     pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+        width: 100%;
+        background-color: white;
+    }
+
+    main {
+        padding-left: 0;
+    }
+
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .burger-menu.active div:nth-child(1) {
+        transform: rotate(45deg) translate(2px, 4px);
+    }
+
+    .burger-menu.active div:nth-child(2) {
+        transform: rotate(-45deg) translate(2px, -4px);
+    }
+    .job-description {
+        font-size: 0.875rem;
+    }
+
+    .second-image {
+        margin-left: 0;
+    }
 }
