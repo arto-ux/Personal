@@ -93,13 +93,13 @@ h3 {
 
 .container {
     width: 100%;
-    padding: 0 48px;
+    padding: 0 40px;
     max-width: 720px;
     margin: 0 auto;
 }
 .container-wide {
     width: 100%;
-    padding: 0 48px;
+    padding: 0 40px;
     max-width: 1440px;
     margin: 0 auto;
 }
