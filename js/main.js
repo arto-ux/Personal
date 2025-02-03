@@ -53,33 +53,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Iterate through each list to create separate animations
     animatedLists.forEach((list) => {
-    const listItems = list.querySelectorAll('*');
+        const listItems = list.querySelectorAll('*');
 
-    // Create a GSAP timeline for each list
-    const tl = gsap.timeline({
-        scrollTrigger: {
-        trigger: list,          
-        start: "top 80%",       
-        end: "top 20%",         
-        toggleActions: 'play none none none',
-        },
-    });
+        // Create a GSAP timeline for each list
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: list,          
+                start: "top 80%",       
+                end: "top 20%",         
+                toggleActions: 'play none none none',
+            },
+        });
 
-    // Define the animation for list items
-    tl.to(listItems, {
-        opacity: 1,
-        x: 0,                
-        stagger: 0.1,        
-        duration: 0.4,     
-        ease: "power2.out",  
-    });
+        // Define the animation for list items
+        tl.to(listItems, {
+            opacity: 1,
+            x: 0,                
+            stagger: 0.1,        
+            duration: 0.4,     
+            ease: "power2.out",  
+        });
     });
 
     // Fade Animation
     document.querySelectorAll('.fade').forEach((fadeIn) => {
         gsap.fromTo(
             fadeIn,
-            { autoAlpha: 0, scale: 0.8 },
+            { autoAlpha: 0, scale: 0.9 },
             {
                 autoAlpha: 1,
                 scale: 1,
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         gsap.fromTo(
             rotateImage,
-            { scale: 0.8, rotation: initialRotation },
+            { scale: 0.9, rotation: initialRotation },
             {
                 scale: 1,
                 rotation: finalRotation,
@@ -216,6 +216,31 @@ document.addEventListener("DOMContentLoaded", () => {
     window.toggleOverlay = function() {
         document.getElementById('overlay').classList.toggle('active');
     };
+
+    // --- NEW: Section Title Animation ---
+    document.querySelectorAll('.section-title').forEach((sectionTitle) => {
+        const text = sectionTitle.textContent;
+        sectionTitle.innerHTML = "";
+        text.split("").forEach((char) => {
+            const span = document.createElement("span");
+            span.classList.add("char");
+            span.textContent = char;
+            sectionTitle.appendChild(span);
+        });
+        gsap.from(sectionTitle.querySelectorAll('.char'), {
+            opacity: 0,
+            y: (index) => (index % 2 === 0 ? gsap.utils.random(50, 200) : gsap.utils.random(-200, -50)),
+            ease: "none",
+            stagger: 0.02,
+            scrollTrigger: {
+                trigger: sectionTitle,
+                start: "top 80%",
+                end: "bottom 60%",
+                scrub: true,
+            },
+        });
+    });
+    // --- END: Section Title Animation ---
 
     // Disable Right-Click & DevTools
     document.addEventListener('contextmenu', (e) => e.preventDefault());
