@@ -379,6 +379,7 @@ section { margin-bottom: min(10vw, 10rem); }
     position: absolute;
     width: 200px;
     opacity: 0;
+    z-index: 3;
     pointer-events: none; /* no mouse events on the video itself */
 }
 
