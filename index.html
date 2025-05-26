@@ -7,13 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <meta name="description" content="Hey there, I'm Arto, a lead product designer specialized in crafting AI experiences">
+    <meta name="description" content="Hey there, I'm Arto, a lead product designer specializing in crafting AI experiences">
     <link rel="stylesheet" href="./css/styles.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
     <link rel="icon" href="./images/fav.svg" type="image/svg+xml">
     <script defer src="./js/main.js"></script>
 </head>
@@ -28,17 +24,11 @@
             <span>N</span>
             <span>G</span>
         </div>
-        <div class="progress-wrap">
-            <div class="progress-bar"></div>
-        </div>
     </div>
 
-    <div class="burger-menu">
-        <div></div>
-        <div></div>
-    </div>
     <img src="./images/shadow.jpg" alt="shadow" class="shadow">
-    <div class="sidebar" id="sidebar">
+
+    <div class="navbar" id="navbar">
         <svg width="51" height="22" viewBox="0 0 51 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M44.0008 7.8999C40.0008 7.8999 37.8008 10.4999 37.8008 13.9999C37.8008 17.4999 40.0008 20.0999 44.0008 20.0999C48.0008 20.0999 50.2008 17.5199 50.2008 13.9999C50.2008 10.4799 48.0008 7.8999 44.0008 7.8999ZM44.0008 17.2999C42.0108 17.2999 40.8008 16.0099 40.8008 13.9999C40.8008 11.9899 42.0108 10.6999 44.0008 10.6999C45.9908 10.6999 47.2008 11.9999 47.2008 13.9999C47.2008 15.9999 45.9908 17.2999 44.0008 17.2999Z" fill="#09090B"/>
             <path d="M22 12.6V20H25V12.4C25 11.3 25.5 10.8 26.6 10.8H29V8H26.4C23.4 8 22 9.39 22 12.6Z" fill="#09090B"/>
@@ -46,197 +36,143 @@
             <path d="M12.6404 2H7.76039L0.400391 20H3.64039L8.86039 7.23C9.19039 6.41 9.50039 5.58 9.78039 4.74L10.1904 3.5L10.6004 4.74C10.8804 5.58 11.1904 6.41 11.5204 7.23L16.7404 20H19.9804L12.6404 2Z" fill="#09090B"/>
         </svg>
                     
-        <ul class="menu">
-            <li><a href="#intro" class="active">Intro</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#my-background">Background</a></li>
-            <li><a href="#contacts">Contacts</a></li>
-        </ul>
-        <button class="toggle-overlay" onclick="toggleOverlay()" aria-label="Night mode toggle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
-            </svg>
-        </button>
+        <div class="menu">
+            <a href="https://www.linkedin.com/in/artobaghdasaryan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="./images/Artavazd_Baghdasaryan_CV_25.pdf" target="_blank" download>Resume</a>
+        </div>
     </div>
     
-    <div class="overlay" id="overlay"></div>
-    
     <main>
-        <section id="intro">
+        <section>
             <div class="container">   
-                <h1 class="hero">Hey there, I'm Arto, a lead product designer specialized in crafting AI experiences</h1>
-                <p class="reveal-type" data-bg-color="var(--grey-300)" data-fg-color="var(--grey-950)">
-                    With 10+ years in dynamic and ever-changing environments, I've learned how to achieve business 
-                    goals while balancing usability and feasibility, and maintaining a high bar for aesthetics. 
-                    Throughout my career, I've developed strong empathy and communication skills, enabling me to collaborate 
-                    within cross-functional teams and bring great ideas to life.
+                <h1>
+                    I'm Arto <img src="./images/arto.jpg" alt="Arto's profile picture" class="profile"> a product designer with 10+ years of experience crafting products in startups and cross-functional teams
+                </h1>
+                <p>
+                    As a senior IC, I’ve worked with everyone from a YC-backed startup to Save the Children, UNICEF, the U.S. Embassy in Armenia, the UN and the World Bank. At Iris Dating, I spent six years turning complex AI into simple, intuitive experiences for over 4 million users. <br><br>On the side, I created a free Dyslexia-Friendly Text Converter that helps people with dyslexia read more easily.
                 </p>
             </div>
         </section>
-
-        <section id="work">
-            <div id="pin" class="container-wide fade">
-                <picture>
-                    <source srcset="./images/collage-1x.webp 1x, ./images/collage-2x.webp 2x" type="image/webp" class="zoomed-in">
-                    <img src="./images/collage-1x.jpg" srcset="./images/collage-1x.jpg 1x, ./images/collage-2x.jpg 2x" alt="collage of works" class="zoomed-in">
-                </picture>
-            </div>
-            <h2 class="section-title">Ongoing&nbsp;Projects</h2>
+        
+        <section>
+            <picture>
+                <source srcset="./images/collage.webp" type="image/webp">
+                <img src="./images/collage.jpg" alt="collage of works">
+            </picture>
+        </section>
+        
+        <section>
+            <p class="section-title">Recent Work</p>
             <div class="container-wide">
-                <div class="image-wrapper left">
-                    <div class="project fade">
-                        <picture>
-                            <source srcset="./images/iris-1x.webp 1x, ./images/iris-2x.webp 2x" type="image/webp">
-                            <img src="./images/collage-1x.jpg" srcset="./images/iris-1x.jpg 1x, ./images/iris-2x.jpg 2x" alt="Iris—First AI-Powered Dating App">
-                        </picture>
-                        <div class="caption">
-                            <p class="subtitle">Iris—First AI-Powered Dating App</p>
-                            <p class="description">Iris uses AI to learn users' preferences by analyzing their likes and dislikes, particularly focusing on facial features.</p>
-                        </div>
+                <div class="wrapper">
+                    <video autoplay loop muted playsinline class="device">
+                        <source src="./videos/iris.mp4" type="video/mp4">
+                    </video>
+                    <div class="caption order-swap">
+                        <h2>Iris Dating</h2>
+                        <p>Iris uses AI to match users who are most likely to find each other attractive.<br><br>I joined in 2019 as the first design hire, defining our product strategy and designing the first AI-powered dating app. Addressed early AI skepticism by creating transparent, user-friendly experiences that helped users trust the technology.</p>
                     </div>
                 </div>
-                <div class="image-wrapper right">
-                    <div class="project fade">
-                        <picture>
-                            <source srcset="./images/bestlook-1x.webp 1x, ./images/bestlook-2x.webp 2x" type="image/webp">
-                            <img src="./images/bestlook-1x.jpg" srcset="./images/bestlook-1x.jpg 1x, ./images/bestlook-2x.jpg 2x" alt="Bestlook—Plastic Surgery Simulator">
-                        </picture>
-                        <div class="caption">
-                            <p class="subtitle">Bestlook—Plastic Surgery Simulator</p>
-                            <p class="description">AI predicts and simulates the most optimal cosmetic changes based on 3+ million trained models.</p>
-                        </div>
+                <div class="wrapper">
+                    <div class="caption">
+                        <p>Recently, I redesigned the navigation. Separated AI recommendations from regular profiles, updated tab icons and added labels to improve accessibility and reduce cognitive load.<br><br>Added clear headings on each tab to eliminate confusion.</p>
                     </div>
+                    <video autoplay loop muted playsinline class="device">
+                        <source src="./videos/iris2.mp4" type="video/mp4">
+                    </video>
                 </div>
+                <div class="wrapper-td">
+                    <div class="caption-wide">
+                        <h2>Canvas</h2>
+                        <p>Next-gen lighting control system that blends cutting-edge technology with luxury.<br><br>I aimed to highlight the product’s tech-luxury edge with a minimalist design. Generous white space, crisp typography and large product images put the focus on the sleek hardware. A grid in the background suggests the underlying network of devices. Smooth color transitions mirror the dimming effect, reinforcing the core feature of light control.</p>
+                    </div>
+                    <video autoplay loop muted playsinline>
+                        <source src="./videos/cnvs.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="wrapper">
+                    <img src="./images/cnvs1.png" alt="canvas app" class="device-sm">
+                    <img src="./images/cnvs2.png" alt="canvas app" class="device-sm">
+                    <img src="./images/cnvs3.png" alt="canvas app" class="device-sm">
+                </div>
+
             </div>
         </section>
 
-        <section id="my-background">
-            <h2 class="section-title">Background</h2>
-            <div class="container">   
-                <p class="reveal-type" data-bg-color="var(--grey-300)" data-fg-color="var(--grey-950)">
-                    I’ve been lucky to explore the many layers of design—strategic, technical, and deeply human. 
-                    Late-night brainstorming with founders. Learning system thinking and efficiency from my brilliant engineers. 
-                    Diving into the craft with fellow designers. Losing sleep over analytics and customer discovery insights. 
-                    It’s been challenging, but incredibly exciting to see ideas grow into something meaningful.
-                    Along the way, I’ve had the privilege of collaborating with amazing people around the world.
-                </p>
-                <div class="company fade">
-                    <p class="company-details">2019–Present • New York, Yerevan</p>
-                    <h3>Lead Product Designer @ Iris Dating</h3>
-                    <p class="job-description">
-                        Joined as the first design hire, partnering with the one and only Igor Khalatian, 
-                        founder of Iris, to shape product strategy and design the first AI-powered dating app. 
-                        Addressed early AI skepticism by creating transparent, user-friendly experiences that 
-                        helped users trust the technology. Leveraged analytics to drive data-informed decisions.
-                    </p>
-                </div>
-                <img src="./images/iris-team1-1x.jpg" srcset="./images/iris-team1-1x.jpg 1x, ./images/iris-team1-2x.jpg 2x" alt="team-photo" class="rotate-image"/>
-                <img src="./images/iris-team2-1x.jpg" srcset="./images/iris-team2-1x.jpg 1x, ./images/iris-team2-2x.jpg 2x" alt="team-photo" class="rotate-image second-image"/>
-            </div>
-            <div class="container">   
-                <div class="company fade">
-                    <p class="company-details">2012–2014 • Yerevan</p>
-                    <h3>Product Designer @ Dasaran</h3>
-                    <p class="job-description">
-                        Designed an award-winning educational platform aimed
-                        at improving access to quality education for students and
-                        teachers. Created user-friendly tools for managing
-                        school operations and tracking student performance.
-                    </p>
-                </div>
-                <img src="./images/das-team1-1x.jpg" srcset="./images/das-team1-1x.jpg 1x, ./images/das-team1-2x.jpg 2x" alt="team-photo" class="rotate-image"/>
-                <img src="./images/das-team2-1x.jpg" srcset="./images/das-team2-1x.jpg 1x, ./images/das-team2-2x.jpg 2x" alt="team-photo" class="rotate-image second-image"/>
-            </div>
-            <div class="container">   
-                <div class="company fade">
-                    <p class="company-details">Since 2011 • San Francisco, Los Angeles, Limassol</p>
-                    <h3>Freelance Designer</h3>
-                    <p class="job-description">
-                        I wore many hats across web and mobile app design disciplines, helping individuals, agencies, and companies big and small, 
-                        including Y-Combinator backed startup, Save the Children, UNICEF, The U.S. Embassy in Armenia, UN, and The World Bank.
-                    </p>
+        <section>
+            <p class="section-title">Featured on Behance</p>
+            <div class="container-wide">
+                <div class="gallery">
+                    <a class="link-image" href="https://www.behance.net/gallery/65873011/ACURAZA" target="_blank" rel="noopener noreferrer">
+                        <picture>
+                            <source srcset="./images/b1.webp" type="image/webp">
+                            <img src="./images/b1.png" alt="behance thumbnail">
+                        </picture>
+                    </a>
+                    <a class="link-image" href="https://www.behance.net/gallery/61653005/E-COMMERCE-APP" target="_blank" rel="noopener noreferrer">
+                        <picture>
+                            <source srcset="./images/b2.webp" type="image/webp">
+                            <img src="./images/b2.png" alt="behance thumbnail">
+                        </picture>
+                    </a>
+                    <a class="link-image" href="https://www.behance.net/gallery/49558511/SCI-FI-GAME-UI" target="_blank" rel="noopener noreferrer">
+                        <picture>
+                            <source srcset="./images/b3.webp" type="image/webp">
+                            <img src="./images/b3.png" alt="behance thumbnail">
+                        </picture>
+                    </a>
+                    <a class="link-image" href="https://www.behance.net/gallery/50545015/YOUTUBE-REDESIGN" target="_blank" rel="noopener noreferrer">
+                        <picture>
+                            <source srcset="./images/b4.webp" type="image/webp">
+                            <img src="./images/b4.png" alt="behance thumbnail">
+                        </picture>
+                    </a>
+                    <a class="link-image" href="https://www.behance.net/gallery/50668805/FREE-PORTFOLIO-TEMPLATE" target="_blank" rel="noopener noreferrer">
+                        <picture>
+                            <source srcset="./images/b5.webp" type="image/webp">
+                            <img src="./images/b5.png" alt="behance thumbnail">
+                        </picture>
+                    </a>
+                    <a class="link-image" href="https://www.behance.net/gallery/50768663/VIRTUAL-MUSEUM" target="_blank" rel="noopener noreferrer">
+                        <picture>
+                            <source srcset="./images/b6.webp" type="image/webp">
+                            <img src="./images/b6.png" alt="behance thumbnail">
+                        </picture>
+                    </a>
                 </div>
             </div>
-            <div class="container">
-                <div class="animated-list">
-                    <p class="all-caps">Highlights</p>
-                    <ul>
-                        <li>Business-Informed Design: Aligning design decisions with growth, revenue, and strategic business objectives.</li>
-                        <li>Discovery and Validation: Proficient in user interviews, shadowing, and usability tests.</li>
-                        <li>Data-Driven Decisions: Using analytics to improve user onboarding, activation, retention, and conversion.</li>
-                    </ul>
-                </div>
-                <div class="animated-list">
-                    <p class="all-caps">Skills</p>
-                    <ul>
-                        <li>User Experience Design and Research</li>
-                        <li>Figma, XD, Adobe Creative Suite</li>
-                        <li>Wireframing and Prototyping</li>
-                        <li>Information Architecture</li>
-                        <li>Customer Development</li>
-                        <li>Product Analytics</li>
-                        <li>HTML, CSS</li>
-                    </ul>
-                </div>
-                <div class="animated-list">
-                    <p class="all-caps">Certifications</p>
-                    <ul>
-                        <li>Career Essentials in Business Analysis</li>
-                        <li>Storytelling to Influence Leadership</li>
-                        <li>Data-Driven Research and Design</li>
-                        <li>Agile UX Design and Research</li>
-                        <li>Effective Communication</li>
-                        <li>Responsive Web Design</li>
-                        <li>Design Psychology</li>
-                        <li>Product Analytics</li>
-                    </ul>
-                </div>
-                <div class="animated-list">
-                    <p class="all-caps">Recognitions</p>
-                    <ul>
-                        <li>Grand Prix Prize: Best Urban Planning<br>(International Student Workshop, France)</li>
-                        <li>Featured on Behance. Recognized in:<br>UI/UX, XD, Photoshop, and Game Design categories.</li>
-                    </ul>
-                </div>
-                <div class="animated-list">
-                <p class="all-caps">Education</p>
-                    <ul>
-                        <li>Master of Arts in Architectural Design</li>
-                    </ul>
-                </div>
-            </div>
-  
+            
         </section>
 
-        <section id="contacts">
-            <div class="container">
-                <h2>Get in touch!</h2>  
-                <h3>Have an idea? <span class="highlight-word" data-video="vidOne">Jump&nbsp;in </span>and<span class="highlight-word" data-video="vidTwo">explore</span>new heights with me!</h3>
+        <section>
+            <div class="container-wide">
+                <h2 class="center">Have an idea? Let's<span id="jump" class="highlight-word" data-video="vidOne">jump&nbsp;in</span>and<span id="explore" class="highlight-word" data-video="vidTwo">explore</span>new heights together!</h2>
                 <video id="vidOne" loop muted preload="none">
-                    <source src="./images/video-1.mp4" type="video/mp4" />
+                    <source src="./videos/jump.mp4" type="video/mp4" />
                 </video>
                   
                 <video id="vidTwo" loop muted preload="none">
-                    <source src="./images/video-2.mp4" type="video/mp4" />
+                    <source src="./videos/explore.mp4" type="video/mp4" />
                 </video>
-                <div class="contact-links">
-                    <a class="link-visit" href="https://www.linkedin.com/in/artobaghdasaryan" target="_blank" rel="noopener noreferrer">Connect with me on LinkedIn
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffffff">
-                            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
-                        </svg>                                   
-                    </a>
-                    <a class="link-visit" href="https://www.behance.net/artavazd" target="_blank" rel="noopener noreferrer">View my Behance portfolio
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffffff">
-                            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
-                        </svg>                                   
-                    </a>
-                    <a class="link-visit" href="https://medium.com/design-bootcamp/data-visualization-and-dashboard-design-case-study-c639da21e4c9" target="_blank" rel="noopener noreferrer">Read my case study on Medium
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffffff">
-                            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
-                        </svg>                                   
-                    </a>
+                <div class="footer">
+                    <div class="button-group">
+                        <a class="button-primary" href="https://www.linkedin.com/in/artobaghdasaryan" target="_blank" rel="noopener noreferrer">
+                            <img src="./images/arto2.jpg" alt="LinkedIn profile picture">
+                            Find me on LinkedIn
+                        </a>
+                        <a class="button-secondary" href="./images/Artavazd_Baghdasaryan_CV_25.pdf" target="_blank" download>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                            </svg>
+                            Download my resume
+                        </a>
+                    </div>
+                    <button id="goToTop" class="go-to-top" aria-label="Go to top">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+                        </svg>                            
+                    </button>
                 </div>
-                <p class="footnote">Designed and coded by Arto Baghdasaryan © 2025</p>
             </div>
         </section>
     </main>
